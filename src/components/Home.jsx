@@ -1,8 +1,9 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import Loader from './Loader'
-import {ToastContainer, toast, Bounce} from 'react-toastify'
+import { ToastContainer, toast, Bounce } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
+import LazyLoading from 'react-lazyload'
 
 function Home({ images, load, setSaved, saved }) {
 
@@ -52,7 +53,7 @@ function Home({ images, load, setSaved, saved }) {
 
   return (
     <div className='main-container'>
-      <ToastContainer/>
+      <ToastContainer />
       {
         load ? (<Loader />) : (
           <div className='home' id='homes'>
@@ -60,7 +61,10 @@ function Home({ images, load, setSaved, saved }) {
               images.map((image) => {
                 return (
                   <div className='card' key={image.id}>
-                    <img src={image.src.medium} alt={image.alt} className='card-img-top' onClick={() => saveImage(image)} />
+                    <LazyLoading offset={100}>
+                      <img src={image.src.medium} alt={image.alt} className='card-img-top' onClick={() => saveImage(image)} />
+                    </LazyLoading>
+
                     <div className='card-body'>
                       <h5 className='card-title'>{image.title}</h5>
                       <p className='card-text'>{image.description}</p>
