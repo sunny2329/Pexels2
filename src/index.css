@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .nav{
+        @apply flex flex-wrap justify-evenly 
+    }
+    .button {
+        @apply cursor-pointer p-2 m-3 mt-6 border-2 rounded-lg outline-1
+    }
+    .button:hover {
+        @apply bg-white text-black border-black transition-all duration-300 ease-linear
+    }
+    .button:active {
+        @apply bg-black text-white border-white transition-all duration-300 ease-linear
+    }
+    .search {
+        @apply flex flex-wrap justify-center items-center mt-7
+    }
+    .search input {
+        @apply w-[40%] p-2 rounded-lg bg-gray-600 text-white transition-all duration-300
+    }
+    .search input:focus {
+        @apply bg-gray-500 text-white border-none p-1 outline-none transition-all duration-300 ease-linear 
+    }
+    .home{
+        @apply flex flex-wrap justify-evenly items-center mt-7 gap-5
+    }
+    .card-img-top{
+        @apply w-[300px] h-[200px] object-cover cursor-pointer
+    }
+    .card{
+        @apply w-[300px] h-[200px] bg-slate-200 flex justify-center items-center rounded-lg overflow-hidden
+    }
+    .card-img-top:hover{
+        @apply scale-110 transition-all duration-500 ease-linear opacity-80
+    }
+    .back{
+        @apply text-center cursor-pointer bg-yellow-500 w-[20%] m-5 p-2 rounded-md
+    }
+    .back:hover{
+        @apply bg-yellow-400 text-white transition-all duration-300 ease-linear
+    }
+    .main-container{
+        @apply flex flex-col items-center justify-center
+    }
+    .loader-container{
+        @apply flex flex-col items-center justify-center 
+    }
+    .loader{
+        @apply w-[300px] h-[300px]
+    }
+    .empty{
+        @apply w-[100%] text-center h-[300px] flex justify-center items-center
+    }
+}
