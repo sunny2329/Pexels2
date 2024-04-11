@@ -60,7 +60,7 @@ function Home({ images, load, setSaved, saved }) {
               images.map((image) => {
                 return (
                   <div className='card' key={image.id}>
-                    <img src={image.src.original} alt={image.alt} className='card-img-top' onClick={() => saveImage(image)} />
+                    <img src={image.src.medium} alt={image.alt} className='card-img-top' onClick={() => saveImage(image)} />
                     <div className='card-body'>
                       <h5 className='card-title'>{image.title}</h5>
                       <p className='card-text'>{image.description}</p>
